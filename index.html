@@ -35,6 +35,61 @@ html,body{background:#eaf6f8}
 @media(max-height:700px){.search-brand{top:2.8%}.brand-mark{width:41px;height:41px}.brand-copy h1{font-size:27px}.brand-copy p{font-size:10.5px}.search-card{top:21%;padding:13px 13px 10px}.search-card .field-compact{margin-bottom:6px}.search-card label{font-size:11px}.city-control,.select-wrap{height:41px}.city-control input,.select-wrap input,.select-wrap select{font-size:15px}.transport button{height:44px}.transport-icon{font-size:17px}.transport small{font-size:8px}.primary.search-button{height:42px;margin-top:7px;font-size:14px}.search-card .status{display:none}.search-wave{display:none}}
 @media(min-width:801px){.search-screen{min-height:680px}.search-background{height:70%;background-size:100% 100%,cover}.search-brand{top:5.5%}.search-card{top:29%;width:430px}.search-wave{height:80px;bottom:9%}}
 .search-brand *{background:transparent!important}
+
+/* ========================= V21 / AJUSTEMENTS ÉCRAN 1 ========================= */
+.search-brand{top:2.5%;gap:12px}
+.brand-mark{width:66px;height:66px;filter:drop-shadow(0 2px 4px rgba(0,45,70,.12))}
+.brand-copy h1{font-size:40px;line-height:.98;letter-spacing:-1px;color:#102f4c}
+.brand-copy p{font-size:17px;line-height:1.16;font-weight:800;margin-top:7px;color:#173b5d;white-space:normal}
+.search-card{top:20.8%;padding:20px 18px 17px}
+.search-card .field-compact{margin-bottom:14px}
+.search-card label{font-size:13.5px;margin-bottom:6px}
+.city-control,.select-wrap{height:50px}
+.city-control input,.select-wrap input,.select-wrap select{font-size:18px}
+.compact-grid{gap:12px;margin-bottom:14px}
+.transport-field{margin-top:0}
+.transport-field>label{margin-bottom:7px}
+.transport button{height:55px}
+.transport-icon{font-size:23px}
+.transport small{font-size:11.5px}
+.primary.search-button{height:52px;margin-top:0;font-size:16.5px}
+.search-card .status{margin-top:8px}
+/* Le logo reste intégré à l'image : aucun fond propre au header. */
+.search-brand,.search-brand *{background:transparent!important;border:0!important;box-shadow:none!important}
+@media(max-width:600px){
+  .search-brand{top:2.2%;gap:10px}
+  .brand-mark{width:62px;height:62px}
+  .brand-copy h1{font-size:38px}
+  .brand-copy p{font-size:16px;line-height:1.15;margin-top:6px}
+  .search-card{top:20.5%;width:calc(100vw - 24px);padding:20px 15px 16px}
+  .search-card .field-compact{margin-bottom:14px}
+  .search-card label{font-size:13px;margin-bottom:6px}
+  .city-control,.select-wrap{height:50px}
+  .city-control input,.select-wrap input,.select-wrap select{font-size:18px}
+  .compact-grid{gap:10px;margin-bottom:14px}
+  .transport-field>label{margin-bottom:7px}
+  .transport button{height:55px}
+  .transport-icon{font-size:22px}
+  .transport small{font-size:11px}
+  .primary.search-button{height:51px;margin-top:0;font-size:16px}
+}
+@media(max-height:700px){
+  .search-brand{top:1.8%}
+  .brand-mark{width:54px;height:54px}
+  .brand-copy h1{font-size:32px}
+  .brand-copy p{font-size:13.5px}
+  .search-card{top:18.5%;padding:15px 13px 12px}
+  .search-card .field-compact{margin-bottom:9px}
+  .search-card label{font-size:11.5px;margin-bottom:4px}
+  .city-control,.select-wrap{height:43px}
+  .city-control input,.select-wrap input,.select-wrap select{font-size:15.5px}
+  .compact-grid{gap:8px;margin-bottom:9px}
+  .transport-field>label{margin-bottom:4px}
+  .transport button{height:45px}
+  .transport-icon{font-size:18px}
+  .transport small{font-size:8.5px}
+  .primary.search-button{height:43px;font-size:14px}
+}
 </style><script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 </head>
 <body>
@@ -48,7 +103,7 @@ html,body{background:#eaf6f8}
       <div class="brand-mark" aria-hidden="true">
         <svg viewBox="0 0 64 64"><circle cx="32" cy="22" r="11" fill="#ffd34d"/><path d="M10 39c8-7 15-7 22 0s14 7 22 0" fill="none" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M8 48c9-7 16-7 24 0s15 7 24 0" fill="none" stroke="#d9f4ff" stroke-width="6" stroke-linecap="round"/></svg>
       </div>
-      <div class="brand-copy"><h1>Où partir ?</h1><p>Trouvez la destination idéale grâce à la météo</p></div>
+      <div class="brand-copy"><h1>Où partir ?</h1><p>Trouvez la destination idéale en fonction<br>de la météo</p></div>
     </header>
 
     <section class="search-card" aria-label="Paramètres du voyage">
@@ -76,7 +131,7 @@ html,body{background:#eaf6f8}
         <button type="button" data-transport="car" class="active"><span class="transport-icon">🚗</span><small>Voiture</small></button>
         <button type="button" data-transport="train"><span class="transport-icon">🚆</span><small>Train</small></button>
         <button type="button" data-transport="bike"><span class="transport-icon">🚲</span><small>Vélo</small></button>
-        <button type="button" data-transport="any"><span class="transport-icon">✈️</span><small>Avion</small></button>
+        <button type="button" data-transport="plane"><span class="transport-icon">✈️</span><small>Avion</small></button>
       </div></div>
       <input type="hidden" id="transport" value="car">
       <button type="button" id="go" class="primary search-button"><span>⌕</span> Trouver où partir</button>
@@ -106,7 +161,7 @@ const places=[
 ["Rennes",48.1173,-1.6778],["Saint-Malo",48.6493,-2.0257],["Dinard",48.633,-2.061],["Dinan",48.455,-2.049],["Fougères",48.351,-1.199],["Vitré",48.124,-1.213],["Redon",47.651,-2.084],["Ploërmel",47.958,-2.397],["Vannes",47.658,-2.761],["Lorient",47.748,-3.370],["Auray",47.67,-2.983],["Quimper",47.997,-4.098],["Brest",48.390,-4.486],["Morlaix",48.577,-3.827],["Lannion",48.732,-3.459],["Saint-Brieuc",48.514,-2.766],["Guingamp",48.562,-3.147],["Nantes",47.218,-1.554],["Ancenis",47.366,-1.178],["Châteaubriant",47.719,-1.376],["Angers",47.478,-0.563],["Cholet",47.059,-0.879],["La Roche-sur-Yon",46.671,-1.426],["Les Sables-d'Olonne",46.497,-1.784],["La Rochelle",46.160,-1.151],["Niort",46.323,-0.459],["Poitiers",46.580,0.340],["Tours",47.394,0.685],["Le Mans",48.006,0.200],["Laval",48.070,-0.770],["Alençon",48.433,0.094],["Caen",49.183,-0.371],["Bayeux",49.276,-0.703],["Cherbourg",49.633,-1.622],["Granville",48.838,-1.598],["Saint-Lô",49.115,-1.090],["Avranches",48.685,-1.357],["Falaise",48.893,-0.195],["Rouen",49.443,1.099],["Le Havre",49.494,0.108],["Dieppe",49.922,1.078],["Évreux",49.024,1.151],["Paris",48.857,2.352],["Orléans",47.903,1.909],["Chartres",48.447,1.489],["Dreux",48.736,1.366],["Blois",47.586,1.335],["Bourges",47.081,2.399],["Châteauroux",46.810,1.691],["Limoges",45.834,1.261],["Brive-la-Gaillarde",45.159,1.533],["Périgueux",45.185,0.721],["Angoulême",45.648,0.156],["Cognac",45.695,-0.329],["Bordeaux",44.838,-0.579],["Arcachon",44.660,-1.169],["Libourne",44.915,-0.241],["Bayonne",43.493,-1.475],["Biarritz",43.483,-1.559],["Pau",43.295,-0.371],["Tarbes",43.232,0.078],["Toulouse",43.605,1.444],["Montauban",44.018,1.356],["Albi",43.929,2.148],["Carcassonne",43.213,2.349],["Narbonne",43.184,2.999],["Béziers",43.344,3.215],["Montpellier",43.612,3.877],["Nîmes",43.837,4.361],["Avignon",43.950,4.806],["Arles",43.677,4.628],["Marseille",43.297,5.370],["Aix-en-Provence",43.529,5.448],["Toulon",43.124,5.928],["Nice",43.710,7.262],["Cannes",43.552,7.018],["Grenoble",45.189,5.725],["Chambéry",45.564,5.917],["Annecy",45.899,6.129],["Lyon",45.764,4.836],["Valence",44.934,4.892],["Saint-Étienne",45.440,4.388],["Clermont-Ferrand",45.777,3.087],["Aurillac",44.926,2.440],["Dijon",47.322,5.041],["Besançon",47.238,6.024],["Mâcon",46.307,4.833],["Chalon-sur-Saône",46.781,4.853],["Nevers",46.990,3.159],["Troyes",48.298,4.074],["Reims",49.258,4.032],["Metz",49.119,6.173],["Nancy",48.693,6.184],["Strasbourg",48.573,7.752],["Colmar",48.079,7.358],["Mulhouse",47.750,7.335]
 ]
 const icons={0:"☀️",1:"🌤️",2:"⛅",3:"☁️",45:"🌫️",48:"🌫️",51:"🌦️",53:"🌦️",55:"🌧️",61:"🌧️",63:"🌧️",65:"🌧️",71:"🌨️",73:"🌨️",75:"❄️",80:"🌦️",81:"🌧️",82:"🌧️",95:"⛈️",96:"⛈️",99:"⛈️"};
-const transportInfo={car:{label:"Voiture",speed:80,emoji:"🚗"},train:{label:"Train",speed:120,emoji:"🚆"},bike:{label:"Vélo",speed:22,emoji:"🚲"}};
+const transportInfo={car:{label:"Voiture",speed:80,emoji:"🚗"},train:{label:"Train",speed:120,emoji:"🚆"},bike:{label:"Vélo",speed:22,emoji:"🚲"},plane:{label:"Avion",speed:700,emoji:"✈️"}};
 function estimatedHours(km,mode){return km/(transportInfo[mode]?.speed||80)*1.15}
 function formatTime(h){if(h>=999)return "Peu importe";const total=Math.max(1,Math.round(h*60));const hh=Math.floor(total/60),mm=total%60;return hh?hh+" h"+(mm?" "+mm+" min":""):mm+" min"}
 const map=L.map("map",{minZoom:1,maxBounds:[[-85,-180],[85,180]],maxBoundsViscosity:1}).setView([46.6,2.3],6);
@@ -191,7 +246,7 @@ cityInput.addEventListener('input',()=>{renderCityOptions(cityInput.value);const
 cityToggle.addEventListener('click',()=>cityDropdown.classList.contains('open')?closeCityList():renderCityOptions(cityInput.value));
 document.addEventListener('click',e=>{if(!e.target.closest('.city-field')){const suggested=cityInput.getAttribute('data-suggested');if(cityInput.value.trim()&&suggested&&sortedCities.some(p=>p[0]===suggested)&&!sortedCities.some(p=>p[0].toLocaleLowerCase('fr')===cityInput.value.trim().toLocaleLowerCase('fr')))cityInput.value=suggested;closeCityList();}});
 /* ========================= ÉCRAN 2 / LOGIQUE DES RÉSULTATS ========================= */
-async function search(){const status=document.getElementById("status"),res=document.getElementById("results");res.innerHTML="";document.getElementById("detail").innerHTML="";markers.clearLayers();try{status.textContent="Recherche du départ…";const s=await geo(document.getElementById("place").value);const maxTime=+document.getElementById("maxTime").value;const transport=document.getElementById("transport").value;const n=+document.getElementById("duration").value,start=document.getElementById("date").value;const e=new Date(start+"T12:00");e.setDate(e.getDate()+n-1);const end=e.toISOString().slice(0,10);if(startMarker)map.removeLayer(startMarker);startMarker=L.marker([s.latitude,s.longitude],{icon:L.divIcon({className:"weather-marker is-departure",html:"📍",iconSize:[38,38],iconAnchor:[19,19],popupAnchor:[0,-20]})}).addTo(map).bindPopup("Départ : "+s.name).openPopup();map.setView([s.latitude,s.longitude],7);const modes=transport==="any"?["car","train","bike"]:[transport];
+async function search(){const status=document.getElementById("status"),res=document.getElementById("results");res.innerHTML="";document.getElementById("detail").innerHTML="";markers.clearLayers();try{status.textContent="Recherche du départ…";const s=await geo(document.getElementById("place").value);const maxTime=+document.getElementById("maxTime").value;const transport=document.getElementById("transport").value;const n=+document.getElementById("duration").value,start=document.getElementById("date").value;const e=new Date(start+"T12:00");e.setDate(e.getDate()+n-1);const end=e.toISOString().slice(0,10);if(startMarker)map.removeLayer(startMarker);startMarker=L.marker([s.latitude,s.longitude],{icon:L.divIcon({className:"weather-marker is-departure",html:"📍",iconSize:[38,38],iconAnchor:[19,19],popupAnchor:[0,-20]})}).addTo(map).bindPopup("Départ : "+s.name).openPopup();map.setView([s.latitude,s.longitude],7);const modes=transport==="any"?["car","train","bike","plane"]:[transport];
 const maxKmByMode={car:9999,train:9999,bike:9999};
 const candidates=places.map(x=>{const km=dist(s.latitude,s.longitude,x[1],x[2]);const travelOptions=modes.map(m=>({mode:m,h:estimatedHours(km,m)})).sort((a,b)=>a.h-b.h);return {x,km,travel:travelOptions[0]};});
 let cand=candidates.filter(c=>c.x[0].toLowerCase()!==s.name.toLowerCase() && (maxTime>=999||c.travel.h<=maxTime)).map(c=>c.x);
